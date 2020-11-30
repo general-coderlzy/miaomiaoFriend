@@ -1,0 +1,6 @@
+/* miniprogram/pages/editUserInfo/weixin/weixin.wxss */
+input{
+  margin: 0 auto;
+  width: 80%;
+  border: 1px solid black;
+}

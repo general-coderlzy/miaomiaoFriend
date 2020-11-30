@@ -1,0 +1,6 @@
+/* miniprogram/pages/editUserInfo/name/name.wxss */
+input{
+  margin: 0 auto;
+  width: 80%;
+  border: 1px solid black;
+}

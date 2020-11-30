@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script src="/javascripts/axios.min.js"></script>
+</head>
+
+<body>
+  <h1><%= title %></h1>
+  <p>EJS Welcome to <%= title %></p>
+  <label for="uploadImg">
+    上传图片: <input type="file" name="uploadImg" id="uploadImg">
+  </label>
+  <script>
+    let uploadImg = document.querySelector("#uploadImg");
+    uploadImg.onchange = function (e) {
+      let file = e.target.files[0];
+      let param = new FormData();
+      param.append('file', file)
+      let config = {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      }
+      axios.post('/uploadBannerImg', param, config).then(res => {
+        console.log(res.data);
+      })
+    }
+  </script>
+</body>
+
+</html>
